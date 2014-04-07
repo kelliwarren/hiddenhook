@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class ProductsController < Public Controller
 
   def show
     @product = Product.find(params[:id])
