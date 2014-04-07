@@ -8,14 +8,14 @@ class LineItemsController < PublicController
     line_item = @order.line_items.build(line_item_params)
     line_item.copy_product_attributes(@product)
     line_item.save
-    # redirect_to 'http://localhost:3000/#features', notice: 'Added to order'
+    redirect_to 'http://localhost:3000/#contact', notice: 'Added to order'
 
   end
 
 
   private
 
-  def def line_item_params
+  def line_item_params
     params.require(:line_item).permit(:name, :price)
   end
 
