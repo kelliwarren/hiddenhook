@@ -1,6 +1,7 @@
 class LineItemsController < PublicController
   belongs_to :order
 
+
   def create
     @product = Product.find(params[:product_id])
     @order = Order.find(session[:order_id])
