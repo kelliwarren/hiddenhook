@@ -8,7 +8,7 @@ class LineItemsController < PublicController
     line_item = @order.line_items.build(line_item_params)
     line_item.copy_product_attributes(@product)
     line_item.save
-    redirect_to @product, notice: 'Added to order'
+    # redirect_to 'http://localhost:3000/#features', notice: 'Added to order'
 
   end
 
