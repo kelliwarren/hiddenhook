@@ -11,6 +11,5 @@
     name: "Product#{i}",
     price: rand(10).to_f,
     description: "product product"
-
     )
 end

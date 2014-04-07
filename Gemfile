@@ -19,4 +19,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :developemt, :test do
+  gem 'rspec-rails'
+end
 
