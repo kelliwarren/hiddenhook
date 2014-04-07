@@ -18,17 +18,17 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-# describe LineItemsController do
+describe LineItemsController do
 
 #   # This should return the minimal set of attributes required to create a valid
 #   # LineItem. As you add validations to LineItem, be sure to
 #   # adjust the attributes here as well.
-#   let(:valid_attributes) { { "name" => "MyString" } }
+  let(:valid_attributes) { { "name" => "MyString" } }
 
 #   # This should return the minimal set of values that should be in the session
 #   # in order to pass any filters (e.g. authentication) defined in
 #   # LineItemsController. Be sure to keep this updated too.
-#   let(:valid_session) { {} }
+  let(:valid_session) { {} }
 
 #   describe "GET index" do
 #     it "assigns all line_items as @line_items" do
@@ -61,42 +61,43 @@ require 'spec_helper'
 #     end
 #   end
 
-#   describe "POST create" do
-#     describe "with valid params" do
-#       it "creates a new LineItem" do
-#         expect {
-#           post :create, {:line_item => valid_attributes}, valid_session
-#         }.to change(LineItem, :count).by(1)
-#       end
+  describe "POST create" do
+    describe "with valid params" do
+      it "creates a new LineItem" do
+        product = Product.first
+        expect {
+          post :create, {product_id: product.id , line_item: valid_attributes}, valid_session
+        }.to change(LineItem, :count).by(1)
+      end
 
-#       it "assigns a newly created line_item as @line_item" do
-#         post :create, {:line_item => valid_attributes}, valid_session
-#         assigns(:line_item).should be_a(LineItem)
-#         assigns(:line_item).should be_persisted
-#       end
+      it "assigns a newly created line_item as @line_item" do
+        post :create, {:line_item => valid_attributes}, valid_session
+        assigns(:line_item).should be_a(LineItem)
+        assigns(:line_item).should be_persisted
+      end
 
-#       it "redirects to the created line_item" do
-#         post :create, {:line_item => valid_attributes}, valid_session
-#         response.should redirect_to(LineItem.last)
-#       end
-#     end
+      it "redirects to the created line_item" do
+        post :create, {:line_item => valid_attributes}, valid_session
+        response.should redirect_to(LineItem.last)
+      end
+    end
 
-#     describe "with invalid params" do
-#       it "assigns a newly created but unsaved line_item as @line_item" do
-#         # Trigger the behavior that occurs when invalid params are submitted
-#         LineItem.any_instance.stub(:save).and_return(false)
-#         post :create, {:line_item => { "name" => "invalid value" }}, valid_session
-#         assigns(:line_item).should be_a_new(LineItem)
-#       end
+    describe "with invalid params" do
+      it "assigns a newly created but unsaved line_item as @line_item" do
+        # Trigger the behavior that occurs when invalid params are submitted
+        LineItem.any_instance.stub(:save).and_return(false)
+        post :create, {:line_item => { "name" => "invalid value" }}, valid_session
+        assigns(:line_item).should be_a_new(LineItem)
+      end
 
-#       it "re-renders the 'new' template" do
-#         # Trigger the behavior that occurs when invalid params are submitted
-#         LineItem.any_instance.stub(:save).and_return(false)
-#         post :create, {:line_item => { "name" => "invalid value" }}, valid_session
-#         response.should render_template("new")
-#       end
-#     end
-#   end
+      it "re-renders the 'new' template" do
+        # Trigger the behavior that occurs when invalid params are submitted
+        LineItem.any_instance.stub(:save).and_return(false)
+        post :create, {:line_item => { "name" => "invalid value" }}, valid_session
+        response.should render_template("new")
+      end
+    end
+  end
 
 #   describe "PUT update" do
 #     describe "with valid params" do
@@ -157,4 +158,4 @@ require 'spec_helper'
 #     end
 #   end
 
-# end
+end
