@@ -15,7 +15,7 @@ class LineItemsController < PublicController
 
   private
 
-  def def line_item_params
+  def line_item_params
     params.require(:line_item).permit(:name, :price)
   end
 
