@@ -77,27 +77,27 @@ describe LineItemsController do
         assigns(:line_item).should be_persisted
       end
 
-      it "redirects to the created line_item" do
-        post :create, {:line_item => valid_attributes}, valid_session
-        response.should redirect_to(LineItem.last)
-      end
+      # it "redirects to the created line_item" do
+      #   post :create, {:line_item => valid_attributes}, valid_session
+      #   response.should redirect_to(LineItem.last)
+      # end
     end
 
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved line_item as @line_item" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        LineItem.any_instance.stub(:save).and_return(false)
-        post :create, {:line_item => { "name" => "invalid value" }}, valid_session
-        assigns(:line_item).should be_a_new(LineItem)
-      end
+    # describe "with invalid params" do
+    #   it "assigns a newly created but unsaved line_item as @line_item" do
+    #     # Trigger the behavior that occurs when invalid params are submitted
+    #     LineItem.any_instance.stub(:save).and_return(false)
+    #     post :create, {:line_item => { "name" => "invalid value" }}, valid_session
+    #     assigns(:line_item).should be_a_new(LineItem)
+    #   end
 
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        LineItem.any_instance.stub(:save).and_return(false)
-        post :create, {:line_item => { "name" => "invalid value" }}, valid_session
-        response.should render_template("new")
-      end
-    end
+    #   it "re-renders the 'new' template" do
+    #     # Trigger the behavior that occurs when invalid params are submitted
+    #     LineItem.any_instance.stub(:save).and_return(false)
+    #     post :create, {:line_item => { "name" => "invalid value" }}, valid_session
+    #     response.should render_template("new")
+    #   end
+    # end
   end
 
   #   describe "PUT update" do
