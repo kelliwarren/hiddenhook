@@ -243,15 +243,15 @@ a:before, a:after {
 
 /* Background images for each divider can be fitted here, for demo purposes I set all images to the same one. Change it to youre likings */
 
-.divider-bg-1 { background-image: url(../img/bg.jpg); }
+.divider-bg-1 { background-image: url(../assets/bg.jpg); }
 
-.divider-bg-2 { background-image: url(../img/bg.jpg); }
+.divider-bg-2 { background-image: url(../assets/bg.jpg); }
 
-.divider-bg-3 { background-image: url(../img/bg.jpg); }
+.divider-bg-3 { background-image: url(../assets/bg.jpg); }
 
-.divider-bg-4 { background-image: url(../img/bg.jpg); }
+.divider-bg-4 { background-image: url(../assets/bg.jpg); }
 
-.divider-bg-5 { background-image: url(../img/bg.jpg); } /* 5 is used for footer section */
+.divider-bg-5 { background-image: url(../assets/bg.jpg); } /* 5 is used for footer section */
 
 
 
